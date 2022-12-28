@@ -1,6 +1,7 @@
 import  express  from "express";
 import bluebird from "bluebird";
 import {createConnection} from "mysql";
+import cors from "cors";
 
 const connectionm ={
     host : "localhost",
@@ -12,6 +13,7 @@ const connectionm ={
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({extended : true}));
+app.use(cors());
 
 /* http://localhost:3002/ */
 app.get("/", (req,res) => res.send("hello kasturi"));
